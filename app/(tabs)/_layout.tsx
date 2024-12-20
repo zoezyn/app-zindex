@@ -1,37 +1,57 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import React from 'react'
+import { Tabs } from 'expo-router'
+import Foundation from '@expo/vector-icons/Foundation';
+import Feather from '@expo/vector-icons/Feather';
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+const TabsLayout = () => {
   return (
-    <Tabs
+    <>
+      <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
+        tabBarActiveTintColor: '#00704E',
+        tabBarInactiveTintColor: 'grey',
+        tabBarStyle: {
+          backgroundColor: '#F3FEF7',
+        },
+      }}
+      >
+        <Tabs.Screen 
+          name="home"
+          options={{ 
+            title: "Home",
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <Foundation name="home" color={color} size={size} />
+            ),
         }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
+        />
+
+        <Tabs.Screen 
+          name="notes"
+          options={{ 
+            title: "Notes",
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <Feather name="file-text" color={color} size={size} />
+            ),
         }}
-      />
-    </Tabs>
+        />
+
+        <Tabs.Screen 
+          name="profile"
+          options={{ 
+            title: "Profile",
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <Feather name="user" color={color} size={size} />
+            ),
+        }}
+        />
+      </Tabs>
+    </>
   );
-}
+};
+
+export default TabsLayout;

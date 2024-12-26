@@ -1,6 +1,6 @@
 export default {
     expo: {
-      name: "app-zindex",
+      name: "Zindex",
       slug: "app-zindex",
       version: "1.0.0",
       orientation: "portrait",
@@ -8,9 +8,9 @@ export default {
       scheme: "myapp",
       userInterfaceStyle: "automatic",
       splash: {
-        image: "./assets/images/splash.png",
+        image: "./assets/images/icon.png",
         resizeMode: "contain",
-        backgroundColor: "#ffffff"
+        backgroundColor: "#ECFDF5"
       },
       ios: {
         supportsTablet: true,
@@ -18,8 +18,8 @@ export default {
       },
       android: {
         adaptiveIcon: {
-          foregroundImage: "./assets/images/adaptive-icon.png",
-          backgroundColor: "#ffffff"
+          foregroundImage: "./assets/images/icon.png",
+          backgroundColor: "#ECFDF5"
         },
         package: "com.anonymous.appzindex"
       },
@@ -34,7 +34,8 @@ export default {
         [
           "@react-native-google-signin/google-signin",
           {
-            iosUrlScheme: process.env.EXPO_PUBLIC_IOS_URL_SCHEME ?? process.env.IOS_URL_SCHEME
+            // iosUrlScheme: process.env.EXPO_PUBLIC_IOS_URL_SCHEME ?? process.env.IOS_URL_SCHEME
+            iosUrlScheme: "com.googleusercontent.apps.377004664714-t80dg0821t21vhjke9bteo4nimas8qg2"
           }
         ]
       ],

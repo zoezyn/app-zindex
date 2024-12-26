@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Alert, Platform, SafeAreaView, View, Image, Text, ScrollView,TextInput } from 'react-native'
 import { supabase } from '@/lib/supabase'
-import Logo from '../../assets/images/logo.png';
+import Logo from '../../assets/images/icon.png';
 import CustomButton from '../../components/CustomButton';
 import { useRouter } from 'expo-router';
 import {

@@ -1,7 +1,7 @@
 import { Text, View, ScrollView, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React from "react";
-import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/icon.png';
 import MainImage from '../assets/images/main.png';
 import CustomButton from "../components/CustomButton";
 import { router } from "expo-router";

@@ -25,12 +25,12 @@ const Home = () => {
             Stop losing track of your valuable book insights.
           </Text>
 
-          <CustomButton 
+          {/* <CustomButton 
             title="Upload Your Notes"
-            onPress={() => {/* handle upload */}}
+            onPress={() => {}}
             buttonStyle="bg-secondary w-64 mx-auto rounded-3xl my-2"
             textStyle="text-white"
-          />
+          /> */}
 
           <Text className='text-left text-3xl font-medium pt-6 pl-6 my-4'>How it works?</Text>
           <View className='mt-2'>

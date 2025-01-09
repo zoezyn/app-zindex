@@ -42,6 +42,14 @@ export default function BookPage() {
         }
     };
 
+    const noteCard = (item: string, index: number, noteId: string) => {
+      return (
+        <View key={`${noteId}-${index}`} className="mb-4 rounded-lg p-4 bg-[#DBF4E9]">
+          <Text className="text-lg last:mb-0 text-gray-800">{item}</Text>
+        </View>
+      )
+    }
+
       
   return (
     <SafeAreaView className="flex-1 bg-primary">
@@ -69,9 +77,7 @@ export default function BookPage() {
             <View key={note.id} className="mb-4 rounded-lg p-4">
               {Array.isArray(note.notes) ? (
                 note.notes.map((item: string, index: number) => (
-                  <Text key={index} className="text-base mb-2 last:mb-0">
-                    • {item}
-                  </Text>
+                  noteCard(item, index, note.id)
                 ))
               ) : (
                 <Text className="text-base">{note.notes}</Text>

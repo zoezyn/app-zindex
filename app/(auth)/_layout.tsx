@@ -10,13 +10,16 @@ import {
   statusCodes,
 } from '@react-native-google-signin/google-signin'
 import Constants from "expo-constants";
-
+import * as AppleAuthentication from 'expo-apple-authentication'
+import { AppleAuth } from '../../components/AppleSignInButton'
 
 export default function Auth() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const GOOGLE_IOS_CLIENT_ID = Constants.expoConfig?.extra?.googleIosClientId
   const GOOGLE_ANDROID_CLIENT_ID = Constants.expoConfig?.extra?.googleAndroidClientId
+  const [loading, setLoading] = useState(false)
+
 
   const webClientId = Platform.OS === 'ios' ? GOOGLE_IOS_CLIENT_ID : GOOGLE_ANDROID_CLIENT_ID
 
@@ -127,6 +130,7 @@ export default function Auth() {
         </View>
       <View className='flex-col mt-12 items-center gap-4'>
         <Text className='text-white'>Or Login with</Text>
+
       <GoogleSigninButton
       size={GoogleSigninButton.Size.Icon}
       color={GoogleSigninButton.Color.Light}
@@ -155,6 +159,8 @@ export default function Auth() {
         }
         }}
         />
+
+        <AppleAuth />
       </View>
 
 

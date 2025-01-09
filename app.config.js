@@ -14,7 +14,8 @@ export default {
       },
       ios: {
         supportsTablet: true,
-        bundleIdentifier: "com.anonymous.appzindex"
+        bundleIdentifier: "com.anonymous.appzindex",
+        usesAppleSignIn: true
       },
       android: {
         adaptiveIcon: {
@@ -31,6 +32,7 @@ export default {
       plugins: [
         "expo-router",
         "expo-font",
+        "expo-apple-authentication",
         [
           "@react-native-google-signin/google-signin",
           {

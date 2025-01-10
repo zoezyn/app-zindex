@@ -7,9 +7,9 @@ export function AppleAuth() {
     return (
       <AppleAuthentication.AppleAuthenticationButton
         buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
-        buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.BLACK}
-        cornerRadius={5}
-        style={{ width: 200, height: 64 }}
+        buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.WHITE}
+        cornerRadius={2}
+        style={{ width: 40, height: 40 }}
         onPress={async () => {
           try {
             const credential = await AppleAuthentication.signInAsync({
@@ -27,7 +27,7 @@ export function AppleAuth() {
                 provider: 'apple',
                 token: credential.identityToken,
               })
-              console.log(JSON.stringify({ error, user }, null, 2))
+            //   console.log(JSON.stringify({ error, user }, null, 2))
               if (!error) {
                 // User is signed in.
               }

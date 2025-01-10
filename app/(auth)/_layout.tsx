@@ -12,7 +12,7 @@ import {
 import Constants from "expo-constants";
 import * as AppleAuthentication from 'expo-apple-authentication'
 import { AppleAuth } from '../../components/AppleSignInButton'
-
+import { GoogleAuth } from '../../components/GoogleSignInButton'
 export default function Auth() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -131,7 +131,7 @@ export default function Auth() {
       <View className='flex-col mt-12 items-center gap-4'>
         <Text className='text-white'>Or Login with</Text>
 
-      <GoogleSigninButton
+      {/* <GoogleSigninButton
       size={GoogleSigninButton.Size.Icon}
       color={GoogleSigninButton.Color.Light}
       onPress={async () => {
@@ -158,9 +158,11 @@ export default function Auth() {
           }
         }
         }}
-        />
-
-        <AppleAuth />
+        /> */}
+        <View className='flex-row gap-4 justify-center items-center'>
+          <GoogleAuth />
+          <AppleAuth />
+        </View>
       </View>
 
 

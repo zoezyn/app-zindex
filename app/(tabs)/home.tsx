@@ -47,18 +47,27 @@ const Home = () => {
 
               <View style={styles.stepCard}>
                 <View className='flex flex-row items-center gap-2 mb-2'>
-                  <Feather name="upload-cloud" size={24} color="black" />
+                  <Feather name="file-text" size={24} color="black" />
                   <Text className='font-bold'>Step 2:</Text>
                 </View>
-                <Text>Go to 〈Kindle/documents/My Clippings.txt〉 file and upload it to here</Text>
+                <Text>Find your kindle notes in〈Kindle/documents/My Clippings.txt〉</Text>
               </View>
 
               <View style={styles.stepCard}>
                 <View className='flex flex-row items-center gap-2 mb-2'>
-                  <Feather name="smartphone" size={24} color="black" />
+                  <Feather name="upload-cloud" size={24} color="black" />
                   <Text className='font-bold'>Step 3:</Text>
                 </View>
-                <Text>Browse and organize your notes</Text>
+                <Text>Go to z-index.org and upload your notes file there</Text>
+              </View>
+
+
+              <View style={styles.stepCard}>
+                <View className='flex flex-row items-center gap-2 mb-2'>
+                  <Feather name="smartphone" size={24} color="black" />
+                  <Text className='font-bold'>Step 4:</Text>
+                </View>
+                <Text>Your file will be processed and synced to your app. You can now browse them on mobile devices.</Text>
               </View>
             
           </View>

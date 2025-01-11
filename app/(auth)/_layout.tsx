@@ -23,6 +23,7 @@ export default function Auth() {
 
   const webClientId = Platform.OS === 'ios' ? GOOGLE_IOS_CLIENT_ID : GOOGLE_ANDROID_CLIENT_ID
 
+  
   GoogleSignin.configure({
     // scopes: ['https://www.googleapis.com/auth/drive.readonly'],
     webClientId: webClientId,
@@ -72,8 +73,30 @@ export default function Auth() {
     })
 
     if (error) Alert.alert(error.message)
-    if (!session) Alert.alert('Please check your inbox for email verification!')
+    if (!session) Alert.alert('Please check your inbox for email verification.')
     setLoading(false)
+  }
+
+  async function resetPassword() {
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email);
+      if (error) {
+        Alert.alert(error.message)
+      } else {
+        Alert.alert(
+          'Password Reset',
+          'Check your email for the password reset link',
+          [{ text: 'OK' }]
+        );
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      Alert.alert(
+        'Error',
+        'Failed to send reset password email. Please try again.',
+        [{ text: 'OK' }]
+      );
+    }
   }
 
   return (
@@ -99,6 +122,7 @@ export default function Auth() {
               autoCapitalize={'none'}
             />
           </View>
+
           <View className='gap-2 mt-4'>
             <Text className='text-white'>Password</Text>
             <TextInput
@@ -111,6 +135,17 @@ export default function Auth() {
               autoCapitalize={'none'}
               secureTextEntry={true}
             />
+
+          </View>
+          {/* <Text className='text-white'>{email}</Text> */}
+
+          <View className='flex-row justify-center items-center'>
+            <CustomButton 
+                title="Forgot Password" 
+                onPress={() => resetPassword()}
+                textStyle="text-white underline"
+                // buttonStyle="py-3 px-18"
+              />
           </View>
 
         <View className='mt-12 gap-8'>
